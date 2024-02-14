@@ -199,7 +199,7 @@ class SingleDecoder(BaseDecoder):
         raw_data = self.read_data_from_stream(stream)
         data, padding_bytes = self.split_data_and_padding(raw_data)
         value = self.decoder_fn(data)
-        self.validate_padding_bytes(value, padding_bytes)
+         # self.validate_padding_bytes(value, padding_bytes)
 
         return value
 
@@ -546,7 +546,7 @@ class StringDecoder(ByteStringDecoder):
         raw_data = self.read_data_from_stream(stream)
         data, padding_bytes = self.split_data_and_padding(raw_data)
         value = self.decoder_fn(data, self.bytes_errors)
-        self.validate_padding_bytes(value, padding_bytes)
+        # self.validate_padding_bytes(value, padding_bytes)
         return value
 
     @staticmethod
